@@ -1,0 +1,100 @@
+a
+{
+	text-decoration:none;
+}
+#messes
+{
+	background:#CCFF99;
+	text-align:center;
+	color:#696969;
+	border:1px solid silver;
+	width:145;
+	display:none;
+	float:left;
+	margin-top:10;
+}
+#menulink
+{
+	background:#E1FAB8;
+	text-decoration:none;
+	padding-left:5;
+	width:120;
+}
+#menulink:hover
+{
+	background:orange;
+	cursor:pointer;
+}
+#mypost
+{
+	background:#E1FAB8;
+	padding:10;
+	width:180;
+}
+#homecontent
+{
+	float:left;
+	width:548;
+	padding:20;
+	font-size:16;
+	font-family:Times New Roman;
+	color:#696969;
+}
+#miniprofile
+{
+	float:left;
+	font-size:16;
+	font-family:Times New Roman;
+	color:#696969;
+}
+#helpes
+{
+	float:left;
+	font-size:16;
+	font-family:Times New Roman;
+	color:blue;
+	width:138;
+}
+#profpage
+{
+	float:left;
+	width:548;
+	padding:20;
+	font-size:16;
+	font-family:Times New Roman;
+	color:#696969;
+}
+#headright
+{
+	float:right;
+	padding-right:20;
+}
+#headright a
+{
+	text-decoration:none;
+}
+#menu
+{
+	float:left;
+	padding:10;
+	font-size:16;
+	color:#696969;
+}
+#nodec
+{
+	text-decoration:none;
+}
+#pointer
+{
+	cursor:pointer;
+}
+#mypost
+{
+	padding:15;
+	background:#E1FAB8;
+	border:2px solid silver;
+}
+#wait
+{
+	text-align:center;
+}

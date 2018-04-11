@@ -1,0 +1,10 @@
+body { background: #fff url('../images/body.gif') bottom repeat-x; }
+p{color: black;}
+.header{font-family:Calibri;  color:white;}
+.reg{font-size:25px; font-family:Calibri; color:#3B5998;}
+.see{font-size:24px;font-family:Calibri;color:#3366ff; }
+.regi{font-family:Calibri;}
+.rulles{font-family:Calibri; }
+.maintext{font-family: Verdana; font-size:17px; color:#3B5998;}
+.nothing{color:Orange; font-family:Calibri; font-size:50px;}
+.sitename{color:white; font-family:Calibri; font-size:300%;}

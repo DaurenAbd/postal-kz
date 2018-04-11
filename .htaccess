@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+
+
+RewriteRule ^([0-9]+)$ v.php?id=$1
+RewriteRule ^([0-9]+)(/?)$ v.php?id=$1

@@ -1,0 +1,302 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.1
+-- http://www.phpmyadmin.net
+-- 
+-- Хост: localhost
+-- Время создания: Фев 27 2013 г., 17:30
+-- Версия сервера: 5.0.18
+-- Версия PHP: 5.1.6
+-- 
+-- БД: `post`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Структура таблицы `cats`
+-- 
+
+CREATE TABLE `cats` (
+  `id` int(3) NOT NULL auto_increment,
+  `category` varchar(100) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=32 ;
+
+-- 
+-- Дамп данных таблицы `cats`
+-- 
+
+INSERT INTO `cats` VALUES (11, '8 марта');
+INSERT INTO `cats` VALUES (7, 'День рождения');
+INSERT INTO `cats` VALUES (14, 'Новый год');
+INSERT INTO `cats` VALUES (19, 'Разное');
+INSERT INTO `cats` VALUES (22, 'День Св. Валентина');
+INSERT INTO `cats` VALUES (23, 'День защитника отечества');
+INSERT INTO `cats` VALUES (24, 'День независимости');
+INSERT INTO `cats` VALUES (25, 'День программиста');
+INSERT INTO `cats` VALUES (26, 'День знаний');
+INSERT INTO `cats` VALUES (27, 'Наурыз');
+INSERT INTO `cats` VALUES (28, 'День победы');
+INSERT INTO `cats` VALUES (29, 'День Столицы');
+INSERT INTO `cats` VALUES (31, 'New category');
+
+-- --------------------------------------------------------
+
+-- 
+-- Структура таблицы `config`
+-- 
+
+CREATE TABLE `config` (
+  `id` int(3) NOT NULL auto_increment,
+  `temp_count` int(100) NOT NULL,
+  `site_url` varchar(500) NOT NULL,
+  `mess_num` int(5) NOT NULL,
+  `post_id` int(4) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=2 ;
+
+-- 
+-- Дамп данных таблицы `config`
+-- 
+
+INSERT INTO `config` VALUES (1, 145, 'localhost/postal', 10, 57);
+
+-- --------------------------------------------------------
+
+-- 
+-- Структура таблицы `images`
+-- 
+
+CREATE TABLE `images` (
+  `id` int(5) NOT NULL auto_increment,
+  `login` varchar(100) NOT NULL,
+  `img` varchar(300) NOT NULL,
+  `card_id` int(5) NOT NULL,
+  `left` int(5) default '0',
+  `top` int(5) default '0',
+  `width` int(4) NOT NULL,
+  `height` int(4) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=339 ;
+
+-- 
+-- Дамп данных таблицы `images`
+-- 
+
+INSERT INTO `images` VALUES (317, 'admin', '150010.jpeg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (319, 'admin', '991617.jpg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (321, 'admin', '395019.jpg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (322, 'admin', '523952.jpg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (323, 'admin', '181857.jpg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (324, 'admin', '523952.jpg', 50, 983, 445, 250, 166);
+INSERT INTO `images` VALUES (325, 'admin', '181857.jpg', 50, 50, 408, 263, 202);
+INSERT INTO `images` VALUES (327, 'admin', '813802.jpg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (328, 'admin', '813802.jpg', 51, 23, 458, 308, 212);
+INSERT INTO `images` VALUES (331, 'admin', '867024.jpg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (333, 'admin', '167778.jpg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (335, 'admin', '872477.jpg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (336, 'admin', '171006.jpg', -1, 0, 0, 100, 100);
+INSERT INTO `images` VALUES (337, 'admin', '872477.jpg', 56, 799, 19, 298, 283);
+INSERT INTO `images` VALUES (338, 'admin', '171006.jpg', 56, 87, 365, 208, 215);
+
+-- --------------------------------------------------------
+
+-- 
+-- Структура таблицы `notes`
+-- 
+
+CREATE TABLE `notes` (
+  `id` int(3) NOT NULL auto_increment,
+  `login` varchar(100) NOT NULL,
+  `note` varchar(1500) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=5 ;
+
+-- 
+-- Дамп данных таблицы `notes`
+-- 
+
+INSERT INTO `notes` VALUES (1, 'admin', 'No tips.');
+INSERT INTO `notes` VALUES (2, 'ruslawik', 'Теперь почти все)))');
+INSERT INTO `notes` VALUES (3, 'DaurenAbd', 'Нет заметок на сегодня');
+INSERT INTO `notes` VALUES (4, 'Mishin870', '');
+
+-- --------------------------------------------------------
+
+-- 
+-- Структура таблицы `postcards`
+-- 
+
+CREATE TABLE `postcards` (
+  `id` int(5) NOT NULL auto_increment,
+  `login` varchar(100) NOT NULL,
+  `text` longtext,
+  `category` varchar(100) NOT NULL,
+  `left` int(5) NOT NULL,
+  `top` int(5) NOT NULL,
+  `color` varchar(30) NOT NULL,
+  `shadx` int(4) NOT NULL,
+  `shady` int(4) NOT NULL,
+  `shadrad` int(4) NOT NULL,
+  `postcard` varchar(500) NOT NULL,
+  `vl` int(10) NOT NULL,
+  `vp` int(10) NOT NULL,
+  `np` int(10) NOT NULL,
+  `nl` int(10) NOT NULL,
+  `post_id` int(4) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=277 ;
+
+-- 
+-- Дамп данных таблицы `postcards`
+-- 
+
+INSERT INTO `postcards` VALUES (270, 'admin', '&lt;p&gt;\n	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;strong&gt;&lt;em&gt;&amp;nbsp; &amp;nbsp; Дорогой Бауржан, поздравляю тебя с днем рождения!&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;\n	&amp;nbsp;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;em&gt;&amp;nbsp; &amp;nbsp; Желаю тебе счастья, здоровья, благополучия,&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;em&gt;успехов в работе и в личной жизне, &lt;/em&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;em&gt;а также всего самого наилучшего.&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;\n	&lt;span style=&quot;font-size:16px;&quot;&gt;&lt;strong&gt;&lt;em&gt;&amp;nbsp; &amp;nbsp; С любовью, твой брат Еркеш.&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\n', 'День рождения', 33, 27, '349ad9', 40, 40, 50, '661024.jpg', 40, 40, 40, 0, 50);
+INSERT INTO `postcards` VALUES (271, 'admin', '&lt;p style=&quot;text-align: center;&quot;&gt;\n	&lt;span style=&quot;font-family:verdana,geneva,sans-serif;&quot;&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;&lt;strong&gt;&lt;em&gt;Уважаемый коллега, хочу поздравить Вас с этим замечательным праздником - Наурызом. &lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&amp;nbsp;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&lt;span style=&quot;font-family:verdana,geneva,sans-serif;&quot;&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;&lt;em&gt;Вся природа просыпается от долгого сна и расцветает в своей первозданной красоте. &lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&amp;nbsp;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&lt;span style=&quot;font-family:verdana,geneva,sans-serif;&quot;&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;&lt;em&gt;Желаю, чтобы и ваша душа расцвела в этот прекрасный день. &lt;/em&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&amp;nbsp;&lt;/p&gt;\n&lt;p style=&quot;text-align: center;&quot;&gt;\n	&lt;span style=&quot;font-family:verdana,geneva,sans-serif;&quot;&gt;&lt;span style=&quot;font-size: 22px;&quot;&gt;&lt;span style=&quot;font-size: 24px;&quot;&gt;&lt;strong&gt;&lt;em&gt;С праздником Вас и будьте счастливы.&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;\n', 'Наурыз', 18, 2, '87cefa', 50, 50, 80, '867730.jpg', 50, 0, 50, 0, 51);
+INSERT INTO `postcards` VALUES (272, 'admin', '&lt;p&gt;\n	&lt;span style=&quot;font-size:26px;&quot;&gt;&lt;strong&gt;Отец, поздравляю тебя с Днем Защитника Отечества.&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;\n	&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;\n	&lt;span style=&quot;font-size:26px;&quot;&gt;Желаю тебе здоровья и счастья на твоем заслуженном отпуске. Никогда не болей, хорошо отдыхай и набирайся сил.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;\n	&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;\n	&lt;span style=&quot;font-size:26px;&quot;&gt;&lt;em&gt;С любовью и уважением, твой младший сын.&lt;/em&gt;&lt;/span&gt;&lt;/p&gt;\n', 'День защитника отечества', 3, 24, '7a4a17', 0, 0, 10, '380642.jpg', 0, 60, 60, 0, 52);
+INSERT INTO `postcards` VALUES (276, 'admin', '<p>\n	<span style="font-size:48px;"><span style="font-family: ~[[odKav~comic sans ms~[[odKav~, cursive;"><em><strong>Happy birthday!</strong></em></span></span></p>\n<p>\n	&nbsp; &nbsp; &nbsp; Nurjan</p>\n', '8 марта', 24, 41, 'db23a1', 20, 20, 30, '964753.jpg', 50, 80, 3, 100, 56);
+
+-- --------------------------------------------------------
+
+-- 
+-- Структура таблицы `shoutbox`
+-- 
+
+CREATE TABLE `shoutbox` (
+  `id` int(3) NOT NULL auto_increment,
+  `login` varchar(100) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `message` varchar(1000) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=289 ;
+
+-- 
+-- Дамп данных таблицы `shoutbox`
+-- 
+
+INSERT INTO `shoutbox` VALUES (208, 'admin', '15.09.2012 01:25:27', 'Теперь не нужно покупать открытки в магазине, это можно сделать абсолютно бесплатно у нас!');
+INSERT INTO `shoutbox` VALUES (288, 'admin', '19.02.2013 09:56:54', 'New message');
+
+-- --------------------------------------------------------
+
+-- 
+-- Структура таблицы `templates`
+-- 
+
+CREATE TABLE `templates` (
+  `id` int(5) NOT NULL auto_increment,
+  `category` varchar(500) NOT NULL,
+  `postcard` varchar(500) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=151 ;
+
+-- 
+-- Дамп данных таблицы `templates`
+-- 
+
+INSERT INTO `templates` VALUES (78, '8 марта', '964753.jpg');
+INSERT INTO `templates` VALUES (74, 'День рождения', '527940.jpg');
+INSERT INTO `templates` VALUES (71, '8 марта', '324652.jpg');
+INSERT INTO `templates` VALUES (72, '8 марта', '610921.jpg');
+INSERT INTO `templates` VALUES (73, '8 марта', '466959.jpg');
+INSERT INTO `templates` VALUES (77, 'Новый год', '111897.jpg');
+INSERT INTO `templates` VALUES (76, 'День рождения', '673285.jpg');
+INSERT INTO `templates` VALUES (79, '8 марта', '718460.jpg');
+INSERT INTO `templates` VALUES (80, '8 марта', '149444.jpg');
+INSERT INTO `templates` VALUES (81, '8 марта', '447991.jpg');
+INSERT INTO `templates` VALUES (82, '8 марта', '522600.jpg');
+INSERT INTO `templates` VALUES (83, '8 марта', '156983.jpg');
+INSERT INTO `templates` VALUES (84, '8 марта', '413498.jpg');
+INSERT INTO `templates` VALUES (85, 'Новый год', '284086.jpg');
+INSERT INTO `templates` VALUES (86, 'Новый год', '763633.jpg');
+INSERT INTO `templates` VALUES (87, 'Новый год', '924044.jpg');
+INSERT INTO `templates` VALUES (88, 'Новый год', '613479.jpg');
+INSERT INTO `templates` VALUES (89, 'Новый год', '372256.jpg');
+INSERT INTO `templates` VALUES (90, 'Новый год', '309029.jpg');
+INSERT INTO `templates` VALUES (95, 'День Столицы', '662190.jpg');
+INSERT INTO `templates` VALUES (96, 'День Столицы', '472005.jpg');
+INSERT INTO `templates` VALUES (97, 'День Столицы', '783447.jpg');
+INSERT INTO `templates` VALUES (98, 'День Столицы', '272298.jpg');
+INSERT INTO `templates` VALUES (99, 'День Столицы', '154269.jpg');
+INSERT INTO `templates` VALUES (100, 'День Столицы', '275282.jpg');
+INSERT INTO `templates` VALUES (101, 'День рождения', '507297.jpg');
+INSERT INTO `templates` VALUES (102, 'День рождения', '894151.jpg');
+INSERT INTO `templates` VALUES (103, 'День рождения', '919786.jpg');
+INSERT INTO `templates` VALUES (104, 'День рождения', '661024.jpg');
+INSERT INTO `templates` VALUES (105, 'День рождения', '164306.jpg');
+INSERT INTO `templates` VALUES (106, 'День Св. Валентина', '897081.jpg');
+INSERT INTO `templates` VALUES (107, 'День Св. Валентина', '811170.jpg');
+INSERT INTO `templates` VALUES (108, 'День Св. Валентина', '433051.jpg');
+INSERT INTO `templates` VALUES (109, 'День Св. Валентина', '926350.jpg');
+INSERT INTO `templates` VALUES (110, 'День Св. Валентина', '904351.jpg');
+INSERT INTO `templates` VALUES (111, 'День Св. Валентина', '992485.jpg');
+INSERT INTO `templates` VALUES (112, 'День защитника отечества', '696397.jpg');
+INSERT INTO `templates` VALUES (113, 'День защитника отечества', '131103.jpg');
+INSERT INTO `templates` VALUES (114, 'День защитника отечества', '944607.jpg');
+INSERT INTO `templates` VALUES (115, 'День защитника отечества', '380642.jpg');
+INSERT INTO `templates` VALUES (116, 'День защитника отечества', '269341.png');
+INSERT INTO `templates` VALUES (117, 'День защитника отечества', '345865.jpg');
+INSERT INTO `templates` VALUES (118, 'День независимости', '728705.jpg');
+INSERT INTO `templates` VALUES (119, 'День независимости', '777669.jpg');
+INSERT INTO `templates` VALUES (120, 'День независимости', '711941.jpg');
+INSERT INTO `templates` VALUES (121, 'День независимости', '200357.jpg');
+INSERT INTO `templates` VALUES (122, 'День независимости', '257242.jpg');
+INSERT INTO `templates` VALUES (123, 'День независимости', '999348.jpeg');
+INSERT INTO `templates` VALUES (124, 'День программиста', '658501.jpg');
+INSERT INTO `templates` VALUES (125, 'День программиста', '180989.jpg');
+INSERT INTO `templates` VALUES (126, 'День программиста', '729410.jpg');
+INSERT INTO `templates` VALUES (127, 'День программиста', '715657.jpg');
+INSERT INTO `templates` VALUES (128, 'День программиста', '147108.jpg');
+INSERT INTO `templates` VALUES (129, 'День программиста', '494683.gif');
+INSERT INTO `templates` VALUES (130, 'День знаний', '977566.jpg');
+INSERT INTO `templates` VALUES (131, 'День знаний', '709038.jpg');
+INSERT INTO `templates` VALUES (132, 'День знаний', '592312.jpg');
+INSERT INTO `templates` VALUES (133, 'День знаний', '188584.png');
+INSERT INTO `templates` VALUES (134, 'День знаний', '335096.jpg');
+INSERT INTO `templates` VALUES (135, 'День знаний', '513183.jpg');
+INSERT INTO `templates` VALUES (136, 'Наурыз', '324842.jpg');
+INSERT INTO `templates` VALUES (137, 'Наурыз', '867730.jpg');
+INSERT INTO `templates` VALUES (138, 'Наурыз', '861897.jpg');
+INSERT INTO `templates` VALUES (140, 'Наурыз', '780463.jpg');
+INSERT INTO `templates` VALUES (141, 'Наурыз', '808159.jpg');
+INSERT INTO `templates` VALUES (142, 'Наурыз', '424289.jpg');
+INSERT INTO `templates` VALUES (143, 'День победы', '124077.jpg');
+INSERT INTO `templates` VALUES (144, 'День победы', '331570.jpg');
+INSERT INTO `templates` VALUES (145, 'День победы', '823242.jpg');
+INSERT INTO `templates` VALUES (146, 'День победы', '708360.jpg');
+INSERT INTO `templates` VALUES (147, 'День победы', '310058.jpg');
+INSERT INTO `templates` VALUES (148, 'День победы', '936821.jpg');
+INSERT INTO `templates` VALUES (149, 'День учителя', '870958.jpg');
+INSERT INTO `templates` VALUES (150, 'New category', '307969.jpg');
+
+-- --------------------------------------------------------
+
+-- 
+-- Структура таблицы `users`
+-- 
+
+CREATE TABLE `users` (
+  `id` int(6) NOT NULL auto_increment,
+  `login` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `surname` varchar(100) NOT NULL,
+  `from` varchar(100) NOT NULL,
+  `birthday` varchar(100) NOT NULL,
+  `avatar` varchar(500) NOT NULL default 'nofoto.jpg',
+  `last_mess` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251 AUTO_INCREMENT=53 ;
+
+-- 
+-- Дамп данных таблицы `users`
+-- 
+
+INSERT INTO `users` VALUES (1, 'admin', 'c4ca4238a0b923820dcc509a6f75849b', 'admin', 'Admin', 'Surname', 'City', 'Не указана', 'admin12386.jpg', '2013-02-19 16:01:21');
+INSERT INTO `users` VALUES (31, 'DaurenAbd', '9ee19b202339a2c3b41d226b47881fe7', '', 'Даурен', 'Абдыкапаров', 'Кокшетау', '07.07.1996', 'nofoto.jpg', '0000-00-00 00:00:00');
+INSERT INTO `users` VALUES (49, 'Mishin870', 'b3d2dd222f89333fb89e5e3226a5ab26', '', '', '', '', '', 'nofoto.jpg', '2013-01-01 18:03:28');
+INSERT INTO `users` VALUES (50, 'almas', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '', '', 'nofoto.jpg', '2013-01-01 18:28:25');
+INSERT INTO `users` VALUES (51, 'Radmir', '5b2a32afd051c428fb0346b394028378', '', '', '', '', '', 'nofoto.jpg', '2013-01-03 12:02:40');
+INSERT INTO `users` VALUES (52, 'temirbay_miras', '6aceea6c03d0657f84250768fdfb0f23', '', 'Miras', 'Temirbay', 'Kokshetau', '06-10-1997', 'nofoto.jpg', '2013-01-03 13:44:03');
+        

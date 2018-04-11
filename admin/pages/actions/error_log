@@ -1,0 +1,1 @@
+[05-Dec-2012 11:53:16] PHP Fatal error:  Call to undefined function  phpsession_start() in /home/u402864492/public_html/admin/pages/actions/uploadtemp.php on line 1
